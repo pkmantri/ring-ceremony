@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ring Ceremony Invitation</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background: url("floral-bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    position: relative;
+    animation: zoomBg 20s ease-in-out infinite alternate;
+}
+
+/* Camera zoom effect */
+@keyframes zoomBg {
+    from { background-size: 100%; }
+    to { background-size: 110%; }
+}
+
+/* Soft overlay */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.6);
+    z-index: -1;
+}
+
+/* Falling Roses */
+.rose {
+    position: fixed;
+    top: -50px;
+    font-size: 28px;
+    opacity: 0.8;
+    animation: fall linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+/* Sections */
+.section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 1.2s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Card */
+.container {
+    max-width: 850px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(6px);
+    border-radius: 24px;
+    padding: 60px 40px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+/* Hero */
+.rings-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-18px); }
+}
+
+h1 {
+    font-size: 3em;
+    color: #7a4da2;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.5em;
+    color: #6b6be0;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.couple-names {
+    font-size: 2.6em;
+    font-weight: bold;
+    margin: 30px 0;
+}
+
+.heart {
+    color: #e63946;
+    margin: 0 15px;
+    animation: heartbeat 1.4s infinite;
+}
+
+@keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    25% { transform: scale(1.2); }
+}
+
+.message {
+    font-size: 1.3em;
+    color: #555;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+.divider {
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #7a4da2, transparent);
+    margin: 30px auto;
+}
+
+/* Details */
+.detail-item {
+    margin: 25px 0;
+    padding: 20px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 16px;
+}
+
+.detail-title {
+    font-size: 1.5em;
+    color: #7a4da2;
+    margin-bottom: 8px;
+}
+
+.detail-text {
+    font-size: 1.2em;
+    color: #444;
+}
+
+/* Venue Box */
+.venue-box {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+/* RSVP Button */
+.rsvp-button {
+    display: inline-block;
+    padding: 18px 45px;
+    font-size: 1.4em;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.rsvp-button:hover {
+    transform: translateY(-6px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    h1 { font-size: 2em; }
+    .couple-names { font-size: 1.8em; }
+    .container { padding: 40px 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio id="bgMusic" autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- HERO -->
+<section class="section">
+    <div class="container">
+        <div class="rings-icon">💍</div>
+        <h1>Ring Ceremony</h1>
+        <div class="subtitle">You're Invited!</div>
+        <div class="divider"></div>
+        <div class="couple-names">
+            Saroj <span class="heart">❤</span> Ipsita
+        </div>
+        <p class="message">Join us as we celebrate our love and commitment</p>
+    </div>
+</section>
+
+<!-- DETAILS -->
+<section class="section">
+    <div class="container">
+        <h1>Event Details</h1>
+        <div class="divider"></div>
+
+        <div class="detail-item">
+            <div class="detail-title">📅 Date</div>
+            <div class="detail-text">Sunday, 25 January 2025</div>
+        </div>
+
+        <div class="detail-item">
+            <div class="detail-title">🕐 Time</div>
+            <div class="detail-text">10:00 AM onwards</div>
+        </div>
+
+        <div class="detail-item">
+            <div class="detail-title">👔 Dress Code</div>
+            <div class="detail-text">Traditional / Formal</div>
+        </div>
+    </div>
+</section>
+
+<!-- VENUE -->
+<section class="section">
+    <div class="container">
+        <h1>Venue</h1>
+        <div class="divider"></div>
+        <div class="venue-box">
+            <h2>📍 Grand Celebration Hall</h2>
+            <p style="margin-top:20px;font-size:1.2em;">
+                Shradhapur<br>
+                Bhograi, Odisha<br>
+                PIN 756037
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- RSVP Section -->
+    <section id="rsvp" class="section">
+        <div class="container">
+            <h1>We Hope to See You!</h1>
+            <div class="divider"></div>
+            
+            <p class="message">
+                Your presence would make our special day even more memorable.<br>
+                Kindly confirm your attendance.
+            </p>
+
+            <a href="tel:+91 8249777827" class="rsvp-button">📞 RSVP Now</a>
+
+            <div style="margin-top: 40px; color: #666;">
+                <p>For any queries, contact:</p>
+                <p style="font-size: 1.2em; margin-top: 10px;">
+                    <strong>+91 8249777827</strong>
+                </p>
+            </div>
+
+            <p style="margin-top: 40px; font-size: 1.5em; color: #764ba2;">
+                ✨ Looking forward to celebrating with you! ✨
+            </p>
+        </div>
+    </section>
+
+<script>
+// Fade-in on scroll
+const sections = document.querySelectorAll(".section");
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add("visible");
+    });
+},{ threshold: 0.2 });
+
+sections.forEach(s => observer.observe(s));
+sections[0].classList.add("visible");
+
+// Falling roses
+function createRose() {
+    const r = document.createElement("div");
+    r.className = "rose";
+    r.innerHTML = "🌹";
+    r.style.left = Math.random() * 100 + "vw";
+    r.style.animationDuration = (5 + Math.random()*5) + "s";
+    document.body.appendChild(r);
+    setTimeout(()=>r.remove(),10000);
+}
+setInterval(createRose,300);
+
+// Music autoplay fallback
+document.body.addEventListener("click", () => {
+    document.getElementById("bgMusic").play();
+},{ once:true });
+</script>
+
+</body>
+</html>
